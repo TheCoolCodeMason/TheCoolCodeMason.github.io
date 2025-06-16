@@ -19,6 +19,7 @@
     </style>
 </head>
 <body>
+    
     <header style="text-align:center; color:#fff; padding:24px 0 12px 0; font-size:2em; font-family:sans-serif;">
         Randomly Generated Maze Game
     </header>
@@ -201,10 +202,47 @@ function gameLoop() {
     checkWin();
     requestAnimationFrame(gameLoop);
 }
+const controls = document.createElement('div');
+controls.style.position = 'fixed';
+controls.style.left = '50%';
+controls.style.bottom = '32px';
+controls.style.transform = 'translateX(-50%)';
+controls.style.display = 'flex';
+controls.style.flexDirection = 'column';
+controls.style.alignItems = 'center';
+controls.style.zIndex = '10';
 
-// Initialize player position
-player.px = player.x * CELL_SIZE;
-player.py = player.y * CELL_SIZE;
+const row1 = document.createElement('div');
+const row2 = document.createElement('div');
+row1.style.display = row2.style.display = 'flex';
+row1.style.justifyContent = row2.style.justifyContent = 'center';
+
+function makeBtn(label, dir) {
+    const btn = document.createElement('button');
+    btn.textContent = label;
+    btn.style.width = '56px';
+    btn.style.height = '56px';
+    btn.style.margin = '4px';
+    btn.style.fontSize = '2em';
+    btn.style.borderRadius = '50%';
+    btn.style.border = 'none';
+    btn.style.background = '#333';
+    btn.style.color = '#fff';
+    btn.style.boxShadow = '0 2px 8px #0006';
+    btn.style.touchAction = 'none';
+    btn.addEventListener('touchstart', e => { e.preventDefault(); tryMove(dir); });
+    btn.addEventListener('mousedown', e => { e.preventDefault(); tryMove(dir); });
+    return btn;
+}
+
+row1.appendChild(makeBtn('▲', 0));
+row2.appendChild(makeBtn('◀', 3));
+row2.appendChild(makeBtn('▼', 2));
+row2.appendChild(makeBtn('▶', 1));
+
+controls.appendChild(row1);
+controls.appendChild(row2);
+document.body.appendChild(controls);
 
 gameLoop();
 </script>
