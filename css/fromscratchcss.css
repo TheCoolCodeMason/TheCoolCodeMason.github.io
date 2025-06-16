@@ -1,0 +1,83 @@
+/* Futuristic CSS Styles */
+
+/* Body: Center content, set background and base font */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #2c5364 80%);
+    margin: 0;
+    font-family: 'Orbitron', Arial, sans-serif;
+    color: #e0eafc;
+}
+
+/* Main container for centering */
+.futuristic-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 90vw;
+    max-width: 800px;
+    padding: 2rem;
+    background: rgba(30, 40, 60, 0.85);
+    border-radius: 24px;
+    box-shadow: 0 0 32px 8px #00ffe7a0;
+}
+
+/* Div 1: Neon header */
+.futuristic-header {
+    font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+    font-size: 2.5rem;
+    color: #00ffe7;
+    text-shadow: 0 0 8px #00ffe7, 0 0 24px #00ffe7a0;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Div 2: Subheader with different font */
+.futuristic-subheader {
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    font-size: 1.5rem;
+    color: #ff00cc;
+    text-shadow: 0 0 6px #ff00cc80;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Div 3: Content block with another font */
+.futuristic-content {
+    font-family: 'Exo', 'Trebuchet MS', sans-serif;
+    font-size: 1.1rem;
+    color: #e0eafc;
+    background: rgba(0, 255, 231, 0.07);
+    border: 1.5px solid #00ffe7;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 0 12px #00ffe740;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Extra: Button with another font */
+.futuristic-btn {
+    font-family: 'Audiowide', 'Arial Black', Gadget, sans-serif;
+    font-size: 1rem;
+    color: #0f2027;
+    background: linear-gradient(90deg, #00ffe7 0%, #ff00cc 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    box-shadow: 0 0 8px #00ffe7a0;
+    transition: background 0.3s, color 0.3s;
+    margin-top: 1rem;
+}
+
+.futuristic-btn:hover {
+    background: linear-gradient(90deg, #ff00cc 0%, #00ffe7 100%);
+    color: #fff;
+}
